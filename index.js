@@ -68,6 +68,7 @@ For more info type \`${settings.botPREFIX}help\`!\n\
     }
 });
 
+
 // Logs of the bot leaves a server and changed the game of the bot
 client.on("guildDelete", guild => {
     const logsServerLeave = client.channels.get(settings.logsChannelID);
@@ -94,6 +95,9 @@ client.on("message", async message => {
     if (message.author.id == "") {
         console.log(`[BlackList] ${message.author.tag} tried to use a command!`);
         return logsCommands.send(`[BlackList] ${message.author.tag} tried to use a command!`);
+    }
+    if (command == "nisy") {
+        message.channel.send("Hi, im Nisyyy xd")
     }
 
     //Channels blacklist
